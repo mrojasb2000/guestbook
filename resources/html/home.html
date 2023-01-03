@@ -26,15 +26,25 @@
           <label class="label" for="name">
             Name
           </label>
+          {% if errors.name %}
+            <div class="notification is-danger">
+              {{errors.name|join}}
+            </div>
+          {% endif %}
           <input class="input" type="text" name="name" value="{{name}}"/>
         </div>
         <div class="field">
+          {% if errors.message %}
+            <div class="notification is-danger">
+              {{errors.message|join}}
+            </div>
+          {% endif %}
           <label class="label" for="message">
             Message
           </label>
           <textarea class="textarea" name="message">{{message}}</textarea>
         </div>
-        <input type="sumit" class="button is-primary" value="comment" />
+        <input type="submit" class="button is-primary" value="comment" />
       </form>
     </div>
    </div>
